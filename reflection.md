@@ -9,18 +9,10 @@
 
 Model value: P = 0.1
 
-<table>
-	<th>Param state</th><th>Description</th>
-	<tr>
-		<td>Higher P,
-		P = 0.7</td>
-		<td>Sharp turns, controller is super sentsitive to the errors. The controller has a large amount of overshoot.</td>
-	</tr>
-	<tr>
-		<td>Lower P, P = 0.0005</td>
-		<td>Immediately went off the track during the initial straight road portion. The time constant is too high.</td>
-	</tr>
-</table>
+| Param state        | Description           |
+| ------------- |:-------------:|
+| Higher P, P = 0.7      | Sharp turns, controller is super sentsitive to the errors. The controller has a large amount of overshoot. |
+| Lower P, P = 0.0005      | Immediately went off the track during the initial straight road portion. The time constant is too high.      |
 
 
 ### I: Integral
@@ -31,17 +23,11 @@ Model value: P = 0.1
 Expected optimal value is low because we don't expect wheels in the simulator to be misaligned much.
 
 Model value: I = 0.01
-<table>
-	<th>Param state</th><th>Description</th>
-	<tr>
-		<td>Higher I, I = 0.2</td>
-		<td>Over-accounts for bias and immediately veers off.</td>
-	</tr>
-	<tr>
-		<td>Lower I, I = 0</td>
-		<td>Car position seems slightly shifted(e.g. red and white portions).</td>
-	</tr>
-</table>
+
+| Param state        | Description           |
+| ------------- |:-------------:|
+| Higher I, I = 0.2      | Over-accounts for bias and immediately veers off. |
+| Lower I, I = 0      | Car position seems slightly shifted      |
 
 ### D: 
 
@@ -49,21 +35,16 @@ Model value: I = 0.01
 
 Model value: D = 4.5
 
-<table>
-	<th>Param state</th><th>Description</th>
-	<tr>
-		<td>Higher D, D = 5.0</td>
-		<td>Counter-steers too much.</td>
-	</tr>
-	<tr>
-		<td>Lower D: D = 2.0</td>
-		<td>THe overshoot is too large.
-  </tr>
-</table>
+
+| Param state        | Description           |
+| ------------- |:-------------:|
+| Higher D, D = 5.0      | Counter-steers too much. |
+| Lower D, D = 2.0      | Overshoot      |
+
 
 ### How the final hyperparameters were chosen
 
-The final hyperparameters (0.1, 0.01, 4.5) were tuned manually.
+The final hyperparameters (0.12, 0.002, 4.3) were tuned manually.
 
 ### References:
 * [PID Controller (Wikipedia)](https://en.wikipedia.org/wiki/PID_controller)
